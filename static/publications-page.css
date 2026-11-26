@@ -1,0 +1,157 @@
+body.publications-page {
+  margin: 0;
+  background: #ffffff;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.publications-header {
+  padding: 26px 32px 18px;
+}
+
+.publications-header h1 {
+  margin: 0;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2rem, 3vw, 2.65rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.publications-main {
+  width: min(100% - 64px, 1460px);
+  margin: 0 auto;
+  padding: 18px 0 72px;
+}
+
+.publications-year-heading {
+  margin: 0;
+  padding: 0 0 14px;
+  border-bottom: 1px solid #dddddd;
+  color: #252525;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* 覆盖原列表中不适合新页面的样式 */
+.publications-page .publication-list {
+  margin: 0;
+  border: 0;
+}
+
+.publications-page .publication-year-group {
+  padding: 0;
+}
+
+/* 每篇论文：左图右文 */
+.publications-page .publication-item {
+  display: grid;
+  grid-template-columns: minmax(220px, 310px) minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  padding: 20px 0 0;
+  border: 0;
+}
+
+.publications-page .publication-item:first-child {
+  padding-top: 14px;
+}
+
+.publications-page .publication-media {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+}
+
+.publications-page .publication-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 不在新页面显示 PUBLICATION 01 这一行 */
+.publications-page .publication-kicker {
+  display: none;
+}
+
+.publications-page .publication-info {
+  min-width: 0;
+}
+
+.publications-page .publication-title {
+  margin: 0 0 8px;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.2rem, 1.7vw, 1.48rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.publications-page .publication-authors {
+  margin: 0 0 6px;
+  color: #222222;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.publications-page .publication-authors sup {
+  font-size: 0.7em;
+}
+
+.publications-page .publication-venue {
+  margin: 0 0 7px;
+  color: #333333;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.publications-page .publication-link {
+  display: inline;
+  margin: 0 14px 0 0;
+  padding: 0;
+  border: 0;
+  color: #9b3d3d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.publications-page .publication-link:hover {
+  text-decoration: underline;
+}
+
+.publications-page .publication-empty {
+  margin: 28px 0;
+  color: #666666;
+}
+
+@media (max-width: 760px) {
+  .publications-header {
+    padding: 22px 20px 14px;
+  }
+
+  .publications-main {
+    width: min(100% - 40px, 1460px);
+    padding-bottom: 48px;
+  }
+
+  .publications-page .publication-item {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+    padding-top: 28px;
+  }
+
+  .publications-page .publication-media {
+    max-width: 100%;
+  }
+}
