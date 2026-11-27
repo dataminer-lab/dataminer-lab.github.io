@@ -37,5 +37,18 @@
     "image": "publication-assets/3b0755d17702a01af6ee292d79552cec.png",
     "created_at": "2026-11-27T00:00:00+08:00",
     "updated_at": "2026-11-27T00:00:00+08:00"
+  },
+  {
+    "title": "An interactive clustering method via metric learning for analyzing energy consumption patterns",
+    "authors": "Yunzhe Wang, Tianyuan Cao, Huixue Wang, Qiming Fu, Jianping Chen, You Lu",
+    "venue": "Journal of Building Engineering",
+    "year": "2024",
+    "summary": "An interactive metric-learning approach that incorporates expert feedback into clustering and visual analysis of household energy consumption patterns.",
+    "url": "https://doi.org/10.1016/j.jobe.2024.111143",
+    "image_alt": "Interface of the interactive visual analytics system for energy consumption clustering",
+    "id": "4abb732e9f0a357fb01f3c9a3c24474d",
+    "image": "publication-assets/4abb732e9f0a357fb01f3c9a3c24474d.png",
+    "created_at": "2026-11-27T17:00:00+08:00",
+    "updated_at": "2026-11-27T17:00:00+08:00"
   }
 ]
