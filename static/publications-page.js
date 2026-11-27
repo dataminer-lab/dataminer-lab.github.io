@@ -1,6 +1,6 @@
 "use strict";
 
-const publicationList = document.querySelector("#publication-list");
+const publicationYears = document.querySelector(".publications-main");
 
 function makeElement(tag, className, text) {
   const element = document.createElement(tag);
@@ -18,7 +18,6 @@ function makeElement(tag, className, text) {
 
 function createPublication(item) {
   const article = makeElement("article", "publication-item");
-
   const figure = makeElement("div", "publication-figure");
   const imagePath = String(item.image || "");
 
@@ -70,6 +69,26 @@ function createPublication(item) {
   return article;
 }
 
+function createYearSection(year, items) {
+  const section = makeElement("section", "publications-year-section");
+  const heading = makeElement("h2", "publications-year-heading");
+  const time = makeElement("time", "", year);
+  const list = makeElement("div", "publication-list");
+  const id = `publication-year-${year}`;
+
+  time.dateTime = year;
+  heading.id = id;
+  section.setAttribute("aria-labelledby", id);
+  heading.append(time);
+
+  items.forEach((item) => {
+    list.append(createPublication(item));
+  });
+
+  section.append(heading, list);
+  return section;
+}
+
 async function loadPublications() {
   try {
     const response = await fetch(
@@ -83,10 +102,8 @@ async function loadPublications() {
 
     const items = await response.json();
 
-    publicationList.replaceChildren();
-
     if (!Array.isArray(items) || items.length === 0) {
-      publicationList.append(
+      publicationYears.replaceChildren(
         makeElement(
           "p",
           "publication-empty",
@@ -96,13 +113,29 @@ async function loadPublications() {
       return;
     }
 
+    const groups = new Map();
+
     items.forEach((item) => {
-      publicationList.append(createPublication(item));
+      const year = String(item.year || "Other");
+
+      if (!groups.has(year)) {
+        groups.set(year, []);
+      }
+
+      groups.get(year).push(item);
     });
+
+    const sections = [...groups.entries()]
+      .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
+      .map(([year, publications]) => {
+        return createYearSection(year, publications);
+      });
+
+    publicationYears.replaceChildren(...sections);
   } catch (error) {
     console.error("Failed to load publications:", error);
 
-    publicationList.replaceChildren(
+    publicationYears.replaceChildren(
       makeElement(
         "p",
         "publication-empty",
