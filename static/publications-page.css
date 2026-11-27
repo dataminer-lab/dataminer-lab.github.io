@@ -188,3 +188,7 @@ body.publications-page {
     grid-column: 1;
   }
 }
+/* 不同年份之间增加间距 */
+.publications-year-section + .publications-year-section {
+  margin-top: 56px;
+}
