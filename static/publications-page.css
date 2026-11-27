@@ -349,3 +349,52 @@ body.publications-page {
     padding-bottom: 4px;
   }
 }
+@media (max-width: 760px) {
+  .publications-site-header-inner {
+    width: min(calc(100% - 32px), 1460px);
+    min-height: 64px;
+    padding: 0;
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+
+  .publications-brand {
+    flex-shrink: 0;
+    gap: 9px;
+  }
+
+  .publications-brand-mark {
+    font-size: 24px;
+  }
+
+  .publications-brand-name {
+    font-size: 14px;
+  }
+
+  .publications-site-nav {
+    width: auto;
+    margin-left: auto;
+    gap: 18px;
+    overflow: visible;
+    padding-bottom: 0;
+    white-space: nowrap;
+  }
+
+  .publications-site-nav a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .publications-brand-name {
+    display: none;
+  }
+
+  .publications-site-nav {
+    gap: 14px;
+  }
+
+  .publications-site-nav a {
+    font-size: 12px;
+  }
+}
