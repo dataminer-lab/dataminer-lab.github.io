@@ -1,3 +1,72 @@
+.publications-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid #dce0e3;
+  background: rgba(247, 247, 245, 0.96);
+  backdrop-filter: blur(16px);
+}
+
+.publications-site-header-inner {
+  width: min(calc(100% - 64px), 1460px);
+  min-height: 78px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.publications-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  color: #1f252d;
+  font-weight: 700;
+}
+
+.publications-brand-mark {
+  position: relative;
+  color: #1f252d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.publications-brand-mark span {
+  color: #9e2f3b;
+}
+
+.publications-brand-mark::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  background: #9e2f3b;
+}
+
+.publications-brand-name {
+  font-size: 16px;
+}
+
+.publications-site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.publications-site-nav a {
+  color: #66707b;
+  font-size: 14px;
+  transition: color 160ms ease;
+}
+
+.publications-site-nav a:hover,
+.publications-site-nav a[aria-current="page"] {
+  color: #9e2f3b;
+}
 body.publications-page {
   margin: 0;
   background: #ffffff;
@@ -191,4 +260,92 @@ body.publications-page {
 /* 不同年份之间增加间距 */
 .publications-year-section + .publications-year-section {
   margin-top: 56px;
+}
+/* 新 Publications 页面的顶部导航 */
+.publications-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid #dce0e3;
+  background: rgba(247, 247, 245, 0.96);
+  backdrop-filter: blur(16px);
+}
+
+.publications-site-header-inner {
+  width: min(calc(100% - 64px), 1460px);
+  min-height: 78px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.publications-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  color: #1f252d;
+  font-weight: 700;
+}
+
+.publications-brand-mark {
+  position: relative;
+  color: #1f252d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.publications-brand-mark span {
+  color: #9e2f3b;
+}
+
+.publications-brand-mark::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  background: #9e2f3b;
+}
+
+.publications-brand-name {
+  font-size: 16px;
+}
+
+.publications-site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.publications-site-nav a {
+  color: #66707b;
+  font-size: 14px;
+  transition: color 160ms ease;
+}
+
+.publications-site-nav a:hover,
+.publications-site-nav a[aria-current="page"] {
+  color: #9e2f3b;
+}
+
+/* 手机端导航 */
+@media (max-width: 760px) {
+  .publications-site-header-inner {
+    width: min(calc(100% - 40px), 1460px);
+    min-height: 70px;
+    padding: 14px 0;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .publications-site-nav {
+    width: 100%;
+    gap: 26px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
 }
