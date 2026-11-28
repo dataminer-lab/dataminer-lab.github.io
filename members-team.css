@@ -1,0 +1,121 @@
+.team-group {
+  --team-accent: #9e2f3b;
+  --team-ink: #1f252d;
+  --team-muted: #66707b;
+}
+
+.team-group + .team-group {
+  margin-top: 58px;
+}
+
+.team-group-heading {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dce0e3;
+}
+
+.team-group-heading h3 {
+  margin: 7px 0 0;
+  color: var(--team-ink);
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(24px, 3vw, 31px);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 38px 26px;
+}
+
+.team-grid-advisor {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.team-card {
+  min-width: 0;
+  text-align: center;
+}
+
+.team-avatar {
+  width: min(100%, 170px);
+  aspect-ratio: 1;
+  margin: 0 auto 22px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dce0e3;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 38%, #ffffff 0 28%, transparent 29%),
+    linear-gradient(145deg, #f4f6f7, #e7ebee);
+  color: var(--team-accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.5vw, 31px);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.team-card h3 {
+  margin: 0;
+  color: var(--team-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.team-role {
+  margin: 8px 0 0;
+  color: var(--team-accent);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.team-area {
+  max-width: 210px;
+  margin: 8px auto 0;
+  color: var(--team-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+@media (max-width: 1050px) {
+  .team-grid,
+  .team-grid-advisor {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .team-grid,
+  .team-grid-advisor {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .team-grid,
+  .team-grid-advisor {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
+  }
+
+  .team-avatar {
+    width: min(100%, 140px);
+  }
+
+  .team-group + .team-group {
+    margin-top: 44px;
+  }
+}
+
+@media (max-width: 380px) {
+  .team-grid,
+  .team-grid-advisor {
+    grid-template-columns: 1fr;
+  }
+}
